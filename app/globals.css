@@ -748,3 +748,45 @@ body:has(.vision)::after {
   font-size: 0.8rem;
   user-select: none;
 }
+
+/* Language switcher */
+.v-switch {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+}
+.v-switch .contents {
+  display: contents;
+}
+.v-switch a,
+.v-switch .current {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+}
+.v-switch a {
+  color: var(--color-mute);
+  transition: color 240ms ease;
+}
+.v-switch a:hover {
+  color: var(--color-red);
+}
+.v-switch .current {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+.v-switch .sep {
+  color: var(--color-mute-3);
+  user-select: none;
+}
+
+/* "Machine-translated" honesty note */
+.v-note {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  color: var(--color-mute);
+}
