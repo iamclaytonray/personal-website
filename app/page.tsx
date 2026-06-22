@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { BangkokClock } from "./bangkok-clock";
 import { FieldMap } from "./field-map";
 
@@ -617,6 +618,9 @@ export default function Home() {
                 <br />
                 Compiled by hand in Bangkok.
               </p>
+              <Link href="/vision" className="link-arrow mt-5 inline-flex">
+                Read the vision <span className="a">→</span>
+              </Link>
             </div>
 
             <div className="col-span-6 md:col-span-3">
