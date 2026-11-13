@@ -45,9 +45,8 @@ export default function Home() {
             .
           </h1>
           <p className="t-lede mt-8 text-ink-2 md:mt-10">
-            Three companies, built in order, each one making the next
-            possible. Before this I cofounded TeachMe.To and grew it from
-            nothing to profitability and a $2M Series A.
+            Before this, I cofounded TeachMe.To and grew it from nothing to
+            profitability and a $2M Series A.
           </p>
         </section>
 
@@ -57,7 +56,7 @@ export default function Home() {
           name="Boardbox"
           status="Out now for Mac"
           lede="A Mac app for founders running the whole company. Describe what you're launching, and it designs the screens, builds the code, writes the outreach and cuts the video."
-          role="It's the business that pays for everything that comes after it."
+          detail="It already knows your company, so every launch starts from what you've decided before. It runs on the Claude Code or Codex plan you already pay for."
           links={[{ href: "https://tryboardbox.com", label: "tryboardbox.com" }]}
           wide
           visual={
@@ -76,8 +75,8 @@ export default function Home() {
           className="panel-withcoach"
           name="WithCoach"
           status="Launching in Bangkok"
-          lede="The app for finding a local coach: a sport, a language, an instrument. Coaches join free and keep everything they charge."
-          role="It brings in Raft's first people: real users who already meet face to face around something they care about. So Raft launches into a crowd instead of an empty room."
+          lede="The app for finding a local coach, from tennis to Thai. Browse coaches by skill and book a time that's actually free."
+          detail="Coaches join free and keep everything they charge. Reviews stay sealed until both sides write one, so they're honest."
           links={[{ href: "https://withcoach.me", label: "withcoach.me" }]}
           visual={
             <Image
@@ -95,8 +94,8 @@ export default function Home() {
           className="panel-raft"
           name="Raft"
           status="Live on iOS and Android"
-          lede="Plans with people nearby. Someone posts what they're doing, you tap I'm in, and you go. Live translation is built in, so language is never the barrier."
-          role="This is the one everything else exists for. The long-term version is Raft Cities: real neighborhoods built so daily life pulls people together instead of apart."
+          lede="Plans with people nearby. Someone posts what they're doing, you tap I'm in, and you go."
+          detail="Live translation is built in, so language is never the barrier. After a few times, they're not strangers anymore."
           links={[
             { href: "https://raft.social", label: "raft.social" },
             {
@@ -121,9 +120,10 @@ export default function Home() {
 
         <section className="frame py-24 md:py-36">
           <div className="max-w-[40rem]">
-            <h2 className="t-h2">Why these three</h2>
+            <h2 className="t-h2">What I believe</h2>
             <p className="t-body mt-6 text-ink-2">
-              Each one refuses something its industry treats as normal. Most
+              Every product I build refuses something its industry treats as
+              normal. Most
               marketplaces take a cut of relationships they didn&rsquo;t
               create. Most social apps make money from your attention and
               your loneliness. I&rsquo;d rather build the other version: tools
@@ -136,7 +136,7 @@ export default function Home() {
             </p>
             <p className="t-body mt-8">
               <Link href="/vision" className="link font-medium text-ink">
-                Read the whole plan, from Boardbox to Raft Cities
+                Read the vision
               </Link>
             </p>
           </div>
@@ -167,7 +167,7 @@ type ProductPanelProps = {
   name: string;
   status: string;
   lede: string;
-  role: string;
+  detail: string;
   links: { href: string; label: string }[];
   visual: React.ReactNode;
   /** Landscape visuals (a desktop app) run full width under the text
@@ -181,7 +181,7 @@ function ProductPanel({
   name,
   status,
   lede,
-  role,
+  detail,
   links,
   visual,
   wide = false,
@@ -196,7 +196,7 @@ function ProductPanel({
         {name}
       </h2>
       <p className="t-lede mt-8 md:mt-10">{lede}</p>
-      <p className="t-body panel-quiet mt-5">{role}</p>
+      <p className="t-body panel-quiet mt-5">{detail}</p>
       <ul className="t-body mt-8 flex flex-wrap gap-x-6 gap-y-2 font-medium">
         {links.map((l) => (
           <li key={l.href}>
