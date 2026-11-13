@@ -5,7 +5,7 @@ import raftPings from "@/public/products/raft-pings.png";
 import boardboxApp from "@/public/products/boardbox-app.png";
 import withcoachApp from "@/public/products/withcoach-app.png";
 
-const EMAIL = "hello@withcoach.me";
+const EMAIL = "iamclaytonray@gmail.com";
 
 export default function Home() {
   return (
@@ -141,7 +141,7 @@ export default function Home() {
             <p className="t-small text-mute">The best way to reach me</p>
             <a
               href={`mailto:${EMAIL}`}
-              className="link t-h2 mt-2 inline-block text-ink"
+              className="link t-email mt-2 inline-block text-ink"
             >
               {EMAIL}
             </a>

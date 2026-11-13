@@ -90,6 +90,17 @@ body {
   text-wrap: balance;
 }
 
+/* The footer email: as large as the screen allows without overflowing,
+   since the address can't wrap. */
+.t-email {
+  font-weight: 600;
+  font-variation-settings: "wdth" 108;
+  font-size: clamp(1.25rem, 0.4rem + 4.8vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+
 .t-lede {
   font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
   line-height: 1.45;
