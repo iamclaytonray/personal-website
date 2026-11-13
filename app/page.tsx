@@ -34,12 +34,12 @@ export default function Home() {
             </a>
             ,{" "}
             <a href="#withcoach" className="hero-product">
-              <WithCoachMark className="hero-mark text-withcoach" />
+              <WithCoachMark className="hero-mark text-withcoach-ink" />
               WithCoach
             </a>{" "}
             and{" "}
             <a href="#raft" className="hero-product">
-              <RaftMark className="hero-mark" />
+              <RaftMark className="hero-mark text-raft" />
               Raft
             </a>
             .

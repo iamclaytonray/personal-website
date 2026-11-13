@@ -22,19 +22,19 @@ export function WithCoachMark({ className }: MarkProps) {
   );
 }
 
+// Raft's "tonight" mark without its pine ground, matching RaftGlyph on
+// raft.social: it takes the color of its context.
 export function RaftMark({ className }: MarkProps) {
   return (
-    <svg viewBox="0 0 100 100" className={className} aria-hidden>
-      <rect width="100" height="100" rx="22" fill="#1f3e36" />
-      <g fill="#fdfcf6">
-        <circle cx="71" cy="27" r="9" />
-        <circle cx="33" cy="49" r="5.5" />
-        <circle cx="48" cy="47" r="5.5" />
-        <rect x="19" y="59" width="46" height="9" rx="4.5" />
-      </g>
+    <svg viewBox="10 10 80 80" className={className} fill="currentColor" aria-hidden>
+      <circle cx="71" cy="27" r="9" />
+      <circle cx="33" cy="49" r="5.5" />
+      <circle cx="48" cy="47" r="5.5" />
+      <rect x="19" y="59" width="46" height="9" rx="4.5" />
       <path
         d="M12 78h76"
-        stroke="#fdfcf6"
+        fill="none"
+        stroke="currentColor"
         strokeWidth="4"
         strokeLinecap="round"
         opacity="0.5"
