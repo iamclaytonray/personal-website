@@ -104,7 +104,7 @@ export function VisionDocument({
         <div className="flex flex-wrap items-center justify-between gap-4 pt-10 md:pt-12">
           <Link href="/" className="v-back">
             <span className="arr">←</span>
-            <span>Field Notebook</span>
+            <span>Home</span>
           </Link>
           <Switcher current={lang} />
         </div>

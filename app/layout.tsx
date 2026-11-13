@@ -1,23 +1,18 @@
 import type { Metadata } from "next";
-import { Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Mona_Sans } from "next/font/google";
 import "./globals.css";
 
-const display = Hanken_Grotesk({
-  variable: "--font-display",
+const mona = Mona_Sans({
+  variable: "--font-mona",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
+  axes: ["wdth"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Clayton — Field Notebook from Bangkok",
+  title: "Clayton — building Boardbox, WithCoach and Raft",
   description:
-    "Full-stack engineer shipping two products for Southeast Asia. Previously cofounder and sole engineer at TeachMe.To (zero → $2M Series A). Now building WithCoach and Raft from Bangkok.",
+    "I'm a founder in Bangkok building three companies in order: Boardbox, WithCoach and Raft. Before this I cofounded TeachMe.To and grew it to profitability and a $2M Series A.",
 };
 
 export default function RootLayout({
@@ -26,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${mono.variable}`}>
+    <html lang="en" className={mona.variable}>
       <body>{children}</body>
     </html>
   );
