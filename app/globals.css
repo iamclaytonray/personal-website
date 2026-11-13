@@ -206,13 +206,11 @@ body {
   vertical-align: 0.08em;
 }
 
-.app-icon {
-  filter: drop-shadow(0 24px 32px rgb(42 38 34 / 0.28))
-    drop-shadow(0 2px 4px rgb(42 38 34 / 0.18));
-}
-
-.photo {
-  border-radius: 10px;
+/* The Boardbox screenshot has transparent rounded corners, so the
+   shadow is a filter that follows them. */
+.window {
+  filter: drop-shadow(0 30px 40px rgb(42 38 34 / 0.24))
+    drop-shadow(0 2px 6px rgb(42 38 34 / 0.14));
 }
 
 .phone {

@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { BoardboxMark, RaftMark, WithCoachMark } from "./marks";
 import raftPings from "@/public/products/raft-pings.png";
-import muayThai from "@/public/products/withcoach-muay-thai.png";
+import boardboxApp from "@/public/products/boardbox-app.png";
+import withcoachApp from "@/public/products/withcoach-app.png";
 
 const EMAIL = "hello@withcoach.me";
 
@@ -56,10 +57,17 @@ export default function Home() {
           name="Boardbox"
           status="Out now for Mac"
           lede="A Mac app for founders running the whole company. Describe what you're launching, and it designs the screens, builds the code, writes the outreach and cuts the video."
-          role="I'm building it with my cofounder, Jeremy. It's the business that pays for everything that comes after it."
+          role="It's the business that pays for everything that comes after it."
           links={[{ href: "https://tryboardbox.com", label: "tryboardbox.com" }]}
+          wide
           visual={
-            <BoardboxMark className="app-icon h-auto w-40 md:w-56" />
+            <Image
+              src={boardboxApp}
+              alt="Boardbox on a Mac: an Initiative planning a product launch, with the plan split into lifecycle, spec and implementation documents"
+              sizes="(min-width: 1200px) 1120px, (min-width: 768px) calc(100vw - 80px), 170vw"
+              className="window h-auto w-[170%] max-w-none md:w-full"
+              placeholder="blur"
+            />
           }
         />
 
@@ -73,10 +81,10 @@ export default function Home() {
           links={[{ href: "https://withcoach.me", label: "withcoach.me" }]}
           visual={
             <Image
-              src={muayThai}
-              alt="A Muay Thai coach holding pads for a student at a gym in Thailand"
-              sizes="(min-width: 768px) 340px, 70vw"
-              className="photo h-auto w-[70vw] max-w-[340px]"
+              src={withcoachApp}
+              alt="WithCoach's welcome screen: “The right coach, close by,” with photos of a Muay Thai session and a tennis player"
+              sizes="(min-width: 768px) 290px, 62vw"
+              className="phone h-auto w-[62vw] max-w-[290px]"
               placeholder="blur"
             />
           }
@@ -162,6 +170,9 @@ type ProductPanelProps = {
   role: string;
   links: { href: string; label: string }[];
   visual: React.ReactNode;
+  /** Landscape visuals (a desktop app) run full width under the text
+   *  instead of sitting beside it. */
+  wide?: boolean;
 };
 
 function ProductPanel({
@@ -173,32 +184,48 @@ function ProductPanel({
   role,
   links,
   visual,
+  wide = false,
 }: ProductPanelProps) {
+  const text = (
+    <div>
+      <p className="t-small font-medium">
+        <span className="status-dot" aria-hidden />
+        {status}
+      </p>
+      <h2 id={`${id}-name`} className="t-product mt-5 md:mt-6">
+        {name}
+      </h2>
+      <p className="t-lede mt-8 md:mt-10">{lede}</p>
+      <p className="t-body panel-quiet mt-5">{role}</p>
+      <ul className="t-body mt-8 flex flex-wrap gap-x-6 gap-y-2 font-medium">
+        {links.map((l) => (
+          <li key={l.href}>
+            <a href={l.href} className="link" target="_blank" rel="noreferrer">
+              {l.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+
   return (
     <section id={id} className={`panel ${className}`} aria-labelledby={`${id}-name`}>
-      <div className="frame grid items-center gap-14 py-20 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] md:gap-10 md:py-28">
-        <div>
-          <p className="t-small font-medium">
-            <span className="status-dot" aria-hidden />
-            {status}
-          </p>
-          <h2 id={`${id}-name`} className="t-product mt-5 md:mt-6">
-            {name}
-          </h2>
-          <p className="t-lede mt-8 md:mt-10">{lede}</p>
-          <p className="t-body panel-quiet mt-5">{role}</p>
-          <ul className="t-body mt-8 flex flex-wrap gap-x-6 gap-y-2 font-medium">
-            {links.map((l) => (
-              <li key={l.href}>
-                <a href={l.href} className="link" target="_blank" rel="noreferrer">
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+      {wide ? (
+        <div className="frame py-20 md:py-28">
+          {text}
+          {/* On phones the screenshot runs off the right edge at a
+              readable size; the padding leaves room for its shadow. */}
+          <div className="-mx-5 mt-8 overflow-hidden px-5 pb-12 pt-6 md:mx-0 md:mt-14 md:overflow-visible md:p-0 md:pt-6">
+            {visual}
+          </div>
         </div>
-        <div className="flex justify-center md:justify-end">{visual}</div>
-      </div>
+      ) : (
+        <div className="frame grid items-center gap-14 py-20 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] md:gap-10 md:py-28">
+          {text}
+          <div className="flex justify-center md:justify-end">{visual}</div>
+        </div>
+      )}
     </section>
   );
 }

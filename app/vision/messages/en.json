@@ -32,7 +32,7 @@
       "role": "The engine",
       "name": "Boardbox",
       "p1": "A workspace assistant for people who do serious knowledge work. Unlike most AI tools, it’s built to be honest with you instead of just agreeable, and it actually remembers who you are and what you’re working on. It helps you think and get real work done rather than keeping you entertained.",
-      "p2": "Its job in the plan: pay the bills. Boardbox is what I’m building right now with my cofounder, Jeremy. If it works, it buys us the freedom to build everything downstream without needing anyone’s permission."
+      "p2": "Its job in the plan: pay the bills. Boardbox is what I’m building right now. If it works, it buys me the freedom to build everything downstream without needing anyone’s permission."
     },
     "withcoach": {
       "role": "The seed",
