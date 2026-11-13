@@ -12,7 +12,7 @@ const mona = Mona_Sans({
 export const metadata: Metadata = {
   title: "Clayton — building Boardbox, WithCoach and Raft",
   description:
-    "I'm a founder in Bangkok building three companies in order: Boardbox, WithCoach and Raft. Before this I cofounded TeachMe.To and grew it to profitability and a $2M Series A.",
+    "I'm a founder in Asia building three companies in order: Boardbox, WithCoach and Raft. Before this I cofounded TeachMe.To and grew it to profitability and a $2M Series A.",
 };
 
 export default function RootLayout({

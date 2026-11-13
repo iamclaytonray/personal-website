@@ -27,14 +27,14 @@ export default function Home() {
       <main>
         <section className="frame pb-20 pt-20 md:pb-28 md:pt-32">
           <h1 className="t-hero max-w-[15em]">
-            I&rsquo;m Clayton, a founder in Bangkok. I&rsquo;m building{" "}
+            I&rsquo;m Clayton, a founder in Asia. I&rsquo;m building{" "}
             <a href="#boardbox" className="hero-product">
               <BoardboxMark className="hero-mark" />
               Boardbox
             </a>
             ,{" "}
             <a href="#withcoach" className="hero-product">
-              <WithCoachMark className="hero-mark text-withcoach-ink" />
+              <WithCoachMark className="hero-mark text-withcoach" />
               WithCoach
             </a>{" "}
             and{" "}
@@ -154,7 +154,7 @@ export default function Home() {
               {EMAIL}
             </a>
           </div>
-          <p className="t-small text-mute">Bangkok, Thailand</p>
+          <p className="t-small text-mute">Based in Asia</p>
         </div>
       </footer>
     </>
