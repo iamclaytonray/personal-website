@@ -15,9 +15,6 @@ export default function Home() {
           Clayton
         </Link>
         <nav className="t-small flex items-center gap-6" aria-label="Site">
-          <Link href="/vision" className="nav-link">
-            The vision
-          </Link>
           <a href={`mailto:${EMAIL}`} className="nav-link">
             Email
           </a>
@@ -133,11 +130,6 @@ export default function Home() {
             <p className="t-body mt-5 text-ink-2">
               Underneath all of it is one conviction: a person is an end, not
               a resource to be optimized.
-            </p>
-            <p className="t-body mt-8">
-              <Link href="/vision" className="link font-medium text-ink">
-                Read the vision
-              </Link>
             </p>
           </div>
         </section>
